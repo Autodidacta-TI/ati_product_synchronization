@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+      <record id="product_template_form_product_synchronization" model ="ir.ui.view">
+          <field name="name">product.template.form</field>
+          <field name="model">product.template</field>
+          <field name="inherit_id" ref="product.product_template_only_form_view" />
+          <field name="arch" type="xml">
+            <header position="inside">
+                <button name="create_product_2_odoo" string="Enviar a Odoo 2" type="object"/>
+            </header>
+          </field>
+      </record>
+    </data>
+</odoo>

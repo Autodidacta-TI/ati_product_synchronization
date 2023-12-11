@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_res_company_form_product_synchronization" model="ir.ui.view">
+        <field name="name">view.res.company.form.product.synchronization</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="product_synchronization" string="Segundo Odoo">
+                    <div class="oe_button_box" name="button_box_co" style="width: auto;">
+                        <button name='test_connection' type="object"
+                                string="Test conexión"
+                                title="Test conexión"
+                                class="oe_stat_button"
+                                icon="fa-pencil-square-o"/>
+                    </div>
+                    <group>
+                        <field name="url_odoo2" />
+                        <field name="db_odoo2" />
+                        <field name="user_odoo" />
+                        <field name="password_odoo" password="True"/>
+                    </group>
+                    <group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

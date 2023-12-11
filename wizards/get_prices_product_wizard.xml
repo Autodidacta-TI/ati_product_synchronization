@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <record id="get_price_product_wizard_form" model="ir.ui.view">
+            <field name="name">get.price.product.wizard.form</field>
+            <field name="model">get.price.product.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Obtener Precios de otro Odoo">
+                    <p class="oe_grey">
+                        Se actualizarán todos los precios de productos tanto costo como de venta. Los productos a actualizarse serán solo aquellos que se detecten que el precio de venta en este sistema sean inferiores.
+                    </p>
+                    <footer>
+                        <button string="Actualizar" name="get_price" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_get_price_product_wizard" model="ir.actions.act_window">
+            <field name="name">Obtener Precios</field>
+            <field name="res_model">get.price.product.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ati_product_synchronization.get_price_product_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+        
+        <menuitem id="menu_get_price_product_wizard_form" name="Actualizar precios" parent="stock.menu_stock_inventory_control" action="action_get_price_product_wizard"/>
+
+    </data>
+</odoo>
